@@ -53,8 +53,7 @@ public class Robot extends TimedRobot
 	@Override
 	public void teleopInit()
 	{
-		
-
+		Shuffleboard1559 widgetFL = new MotorWidget(motorFL,"Slider","FL Motor");
 
 	}
 
@@ -62,7 +61,6 @@ public class Robot extends TimedRobot
 	@Override
 	public void teleopPeriodic()
 	{
-	MotorWidget widgetFL = new MotorWidget(motorFL,"FL Motor");
 	
 	}
 

@@ -14,10 +14,21 @@ public class MotorWidget extends Shuffleboard1559
 {
     private NetworkTableEntry widget;
     private WPI_TalonSRX motor;
-    public MotorWidget(WPI_TalonSRX inputMotor, String widgetName)
+    public MotorWidget(WPI_TalonSRX inputMotor, String widgetType, String widgetName)
     {
         motor = inputMotor;
-        widget = getTab().add(widgetName,1).withWidget(BuiltInWidgets.kNumberSlider).getEntry();
+        if(widgetType.equals("Slider"))
+        {
+            widget = getTab().add(widgetName,1).withWidget(BuiltInWidgets.kNumberSlider).getEntry();
+        }
+        else if(widgetType.equals("Text Box"))
+        {
+            widget = getTab().add(widgetName,1).withWidget(BuiltInWidgets.kTextView).getEntry();
+        }
+        else if(widgetType.equals("Graph"))
+        {
+            widget = getTab().add(widgetName,1).withWidget(BuiltInWidgets.kGraph).getEntry();
+        }
         
     }
 
