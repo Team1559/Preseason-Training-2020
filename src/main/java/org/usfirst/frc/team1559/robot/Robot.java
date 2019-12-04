@@ -7,9 +7,8 @@
 
 package org.usfirst.frc.team1559.robot;
 
-
+import org.usfirst.frc.team1559.robot.widgets.*;
 import edu.wpi.first.wpilibj.TimedRobot;
-import org.usfirst.frc.team1559.robot.Shuffleboard1559;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
 import org.usfirst.frc.team1559.robot.OperatorInterface;
@@ -18,6 +17,9 @@ import org.usfirst.frc.team1559.robot.OperatorInterface;
 public class Robot extends TimedRobot
 {
 	WPI_TalonSRX motorFL;
+	WPI_TalonSRX motorFR;
+	WPI_TalonSRX motorBL;
+	WPI_TalonSRX motorBR;
 	//instantiate variables and other things 
 
 	@Override
@@ -25,6 +27,9 @@ public class Robot extends TimedRobot
 	{
 		// Sub-System Instantiations
 		motorFL = new WPI_TalonSRX(1);
+		motorFR = new WPI_TalonSRX(2);
+		motorBL = new WPI_TalonSRX(3);
+		motorBR = new WPI_TalonSRX(4);
 		}
 
 	@Override
@@ -57,7 +62,7 @@ public class Robot extends TimedRobot
 	@Override
 	public void teleopPeriodic()
 	{
-	Shuffleboard1559 widgetFL = new Shuffleboard1559(motorFL,"FL Motor");
+	MotorWidget widgetFL = new MotorWidget(motorFL,"FL Motor");
 	
 	}
 
