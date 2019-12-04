@@ -17,7 +17,7 @@ public class MotorWidget extends Shuffleboard1559
     public MotorWidget(WPI_TalonSRX inputMotor, String widgetName)
     {
         motor = inputMotor;
-        widget = getTab().add(widgetName,1).withWidget(BuiltInWidgets.kTextView).getEntry();
+        widget = getTab().add(widgetName,1).withWidget(BuiltInWidgets.kNumberSlider).getEntry();
         
     }
 
