@@ -70,6 +70,67 @@ public class OperatorInterface {
         //returns true if the axis button is pressed
         return (copilot.getRawAxis(axis) == 1);
     }
+    public int getDPadDirection()
+    {
+        //returns the value of the D Pad in Degrees
+        //System.out.println(pilot.getPOV(0));
+        return pilot.getPOV(0);
+    }
+    
+    public boolean getDPadRight(int DPadDirection)
+    {
+        if(getDPadDirection() >= 85 && getDPadDirection() <= 95)
+        return true;
+        return false;
+    }
 
+    public boolean getDPadLeft(int DPadDirection)
+    {
+        if(getDPadDirection() >= 265 && getDPadDirection() <= 275)
+        return true;
+        return false;
+    }
+    
+    public boolean getDPadUp(int DPadDirection)
+    {
+        if(getDPadDirection() >= 355 || getDPadDirection() <= 5 && getDPadDirection() != -1)
+        return true;
+        return false;
+    }
+
+    public boolean getDPadDown(int DPadDirection)
+    {
+        if(getDPadDirection() >= 175 && getDPadDirection() <= 185)
+        return true;
+        return false;
+    }
+    
+    public boolean getDPadUpRight(int DPadDirection)
+    {
+        if(getDPadDirection() >= 40 && getDPadDirection() <= 50)
+        return true;
+        return false;
+    }
+    
+    public boolean getDPadDownRight(int DPadDirection)
+    {
+        if(getDPadDirection() >= 130 && getDPadDirection() <= 140)
+        return true;
+        return false;
+    }
+    
+    public boolean getDPadDownLeft(int DPadDirection)
+    {
+        if(getDPadDirection() >= 220 && getDPadDirection() <= 230)
+        return true;
+        return false;
+    }
+    
+    public boolean getDPadUpLeft(int DPadDirection)
+    {
+        if(getDPadDirection() >= 310 && getDPadDirection() <= 320)
+        return true;
+        return false;
+    }  
     
 }
