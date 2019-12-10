@@ -5,7 +5,7 @@ import edu.wpi.first.wpilibj.shuffleboard.BuiltInWidgets;
 import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
 import edu.wpi.first.wpilibj.shuffleboard.ShuffleboardTab;
 
-public abstract class Shuffleboard1559
+public class Shuffleboard1559
 {
     private ShuffleboardTab tab;
 

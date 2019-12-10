@@ -10,24 +10,24 @@ import org.usfirst.frc.team1559.robot.Shuffleboard1559;
 import edu.wpi.first.networktables.NetworkTableEntry;
 import edu.wpi.first.wpilibj.shuffleboard.BuiltInWidgets;
 
-public class MotorWidget extends Shuffleboard1559
+public class MotorWidget
 {
     private NetworkTableEntry widget;
     private WPI_TalonSRX motor;
-    public MotorWidget(WPI_TalonSRX inputMotor, String widgetType, String widgetName)
+    public MotorWidget(WPI_TalonSRX inputMotor, String widgetType, String widgetName, Shuffleboard1559 tabThing)
     {
         motor = inputMotor;
         if(widgetType.equals("Slider"))
         {
-            widget = getTab().add(widgetName,1).withWidget(BuiltInWidgets.kNumberSlider).getEntry();
+            widget = tabThing.getTab().add(widgetName,1).withWidget(BuiltInWidgets.kNumberSlider).getEntry();
         }
         else if(widgetType.equals("Text Box"))
         {
-            widget = getTab().add(widgetName,1).withWidget(BuiltInWidgets.kTextView).getEntry();
+            widget = tabThing.getTab().add(widgetName,1).withWidget(BuiltInWidgets.kTextView).getEntry();
         }
         else if(widgetType.equals("Graph"))
         {
-            widget = getTab().add(widgetName,1).withWidget(BuiltInWidgets.kGraph).getEntry();
+            widget = tabThing.getTab().add(widgetName,1).withWidget(BuiltInWidgets.kGraph).getEntry();
         }
         
     }
