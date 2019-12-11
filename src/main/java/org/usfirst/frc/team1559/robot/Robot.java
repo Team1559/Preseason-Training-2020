@@ -24,6 +24,7 @@ public class Robot extends TimedRobot
 	WPI_TalonSRX motorBR;
 	Shuffleboard1559 tab;
 	MotorWidget widgetFL;
+	MotorWidget widgetFR;
 	//instantiate variables and other things 
 
 	@Override
@@ -36,6 +37,7 @@ public class Robot extends TimedRobot
 		motorBR = new WPI_TalonSRX(4);
 		tab = new Shuffleboard1559();
 		widgetFL = new MotorWidget(motorFL, "FL Motor", tab);
+		widgetFR = new MotorWidget(motorFR, "FR Motor", tab);
 		}
 
 	@Override
@@ -86,6 +88,7 @@ public class Robot extends TimedRobot
 	public void testInit()
 	{
 		motorFL.set(ControlMode.PercentOutput, 0);
+		motorFR.set(ControlMode.PercentOutput, 0);
 		
 	}
 
@@ -93,5 +96,6 @@ public class Robot extends TimedRobot
 	public void testPeriodic()
 	{
 		widgetFL.changeOutput();
+		widgetFR.changeOutput();
 	}
 }

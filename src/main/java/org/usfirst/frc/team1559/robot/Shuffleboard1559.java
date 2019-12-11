@@ -11,10 +11,10 @@ public class Shuffleboard1559
 
     public Shuffleboard1559()
     {
-        tab = Shuffleboard.getTab("Robot Test");
+        tab = Shuffleboard.getTab("Robot Test"); //This creates the tab that the info will go into
     }
 
-    public ShuffleboardTab getTab()
+    public ShuffleboardTab getTab() //Provides the tab to anywhere that requires it.
     {
         return tab;
     }
