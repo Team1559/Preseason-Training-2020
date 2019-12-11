@@ -14,22 +14,10 @@ public class MotorWidget
 {
     private NetworkTableEntry widget;
     private WPI_TalonSRX motor;
-    public MotorWidget(WPI_TalonSRX inputMotor, String widgetType, String widgetName, Shuffleboard1559 tabThing)
+    public MotorWidget(WPI_TalonSRX inputMotor, String widgetName, Shuffleboard1559 tabThing)
     {
         motor = inputMotor;
-        if(widgetType.equals("Slider"))
-        {
-            widget = tabThing.getTab().add(widgetName,1).withWidget(BuiltInWidgets.kNumberSlider).getEntry();
-        }
-        else if(widgetType.equals("Text Box"))
-        {
-            widget = tabThing.getTab().add(widgetName,1).withWidget(BuiltInWidgets.kTextView).getEntry();
-        }
-        else if(widgetType.equals("Graph"))
-        {
-            widget = tabThing.getTab().add(widgetName,1).withWidget(BuiltInWidgets.kGraph).getEntry();
-        }
-        
+        widget = tabThing.getTab().add(widgetName,1).withWidget(BuiltInWidgets.kNumberSlider).getEntry();
     }
 
     //public Shuffleboard1559(WPI_TalonSRX inputMotor1, 

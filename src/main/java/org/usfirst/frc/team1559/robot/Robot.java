@@ -9,6 +9,8 @@ package org.usfirst.frc.team1559.robot;
 
 import org.usfirst.frc.team1559.robot.widgets.*;
 import edu.wpi.first.wpilibj.TimedRobot;
+
+import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
 import org.usfirst.frc.team1559.robot.OperatorInterface;
@@ -80,7 +82,8 @@ public class Robot extends TimedRobot
 	@Override
 	public void testInit()
 	{
-		MotorWidget widgetFL = new MotorWidget(motorFL,"Slider","FL Motor", tab);
+		motorFL.set(ControlMode.PercentOutput, 0);
+		MotorWidget widgetFL = new MotorWidget(motorFL,"FL Motor", tab);
 	}
 
 	@Override
