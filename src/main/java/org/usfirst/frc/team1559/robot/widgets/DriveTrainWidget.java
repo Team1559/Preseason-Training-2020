@@ -9,28 +9,26 @@ import edu.wpi.first.networktables.NetworkTableEntry;
 import edu.wpi.first.wpilibj.shuffleboard.BuiltInWidgets;
 
 public class DriveTrainWidget
+/*
+* Used to control all the wheels of the drive train at eqauls output and in the same direction.
+* Designed for testing purposes only! Not intended for actually driving the robot! - Jack Vander Linden
+*/
 {
     private NetworkTableEntry widget;
-    private WPI_TalonSRX motor1;
-    private WPI_TalonSRX motor2;
-    private WPI_TalonSRX motor3;
-    private WPI_TalonSRX motor4;
+    private WPI_TalonSRX[] motors;
 
-    public DriveTrainWidget(WPI_TalonSRX inputMotor1,WPI_TalonSRX inputMotor2,WPI_TalonSRX inputMotor3,WPI_TalonSRX inputMotor4, Shuffleboard1559 tabInsert)
+    public DriveTrainWidget(WPI_TalonSRX[] inputMotors, Shuffleboard1559 tabInsert)
     {
-        motor1 = inputMotor1;
-        motor2 = inputMotor2;
-        motor3 = inputMotor3;
-        motor4 = inputMotor4;
+        motors = inputMotors;
         widget = tabInsert.getTab().add("Drive Train Control",1).withWidget(BuiltInWidgets.kNumberSlider).getEntry();
     }
 
     public void changeOutput()
     {
         double output = widget.getDouble(1.0);
-        motor1.set(ControlMode.PercentOutput,output);
-        motor2.set(ControlMode.PercentOutput,output);
-        motor3.set(ControlMode.PercentOutput,output);
-        motor4.set(ControlMode.PercentOutput,output);
+        for(int i = 0; i < motors.length; i++)
+        {
+            motors[i].set(ControlMode.PercentOutput, output);
+        }
     }
 }
