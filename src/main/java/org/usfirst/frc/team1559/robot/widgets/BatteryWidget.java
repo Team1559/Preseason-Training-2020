@@ -1,6 +1,8 @@
 package org.usfirst.frc.team1559.robot.widgets;
 
 import edu.wpi.first.networktables.NetworkTableEntry;
+import edu.wpi.first.wpilibj.DriverStation;
+import edu.wpi.first.wpilibj.RobotController;
 import edu.wpi.first.wpilibj.shuffleboard.BuiltInWidgets;
 
 import java.util.Map;
@@ -21,7 +23,8 @@ public class BatteryWidget
 
     public void updateVoltage()
     {
-        voltage = widgetVoltage.getDouble(1.0);
+        voltage = RobotController.getBatteryVoltage();
+        widgetVoltage.setDouble(voltage);
         widgetVoltageHistory.setDouble(voltage);
 
     }

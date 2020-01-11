@@ -26,6 +26,7 @@ public class Robot extends TimedRobot
 	MotorWidget widgetFL;
 	MotorWidget widgetFR;
 	DriveTrainWidget driveTrain;
+	BatteryWidget battery;
 	//instantiate variables and other things 
 
 	@Override
@@ -41,6 +42,7 @@ public class Robot extends TimedRobot
 		widgetFR = new MotorWidget(motorFR, "FR Motor", tab);
 		WPI_TalonSRX[] motors = {motorFL, motorFR, motorBL, motorBR};
 		driveTrain = new DriveTrainWidget(motors, tab);
+		battery = new BatteryWidget(tab);
 		}
 
 	@Override
@@ -102,6 +104,7 @@ public class Robot extends TimedRobot
 		widgetFL.changeOutput();
 		widgetFR.changeOutput();
 		driveTrain.changeOutput();
+		battery.updateVoltage();
 
 	}
 }
